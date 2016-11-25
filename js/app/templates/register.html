@@ -2,34 +2,49 @@
 <!-- Form content -->
 <div class="form-content">
 
-    <p class="app-desc">Please fill the form below such username &amp; password for your access to the app.</p>
+    <p class="app-desc">Please fill the form to create your account.</p>
+    <form ng-submit="RegisterAction()">
+        <span id="ErrorMessage" style="display:none;color:red;">{{ ErrorMessage }}</span>
+        <div class="input-field with-icon">
+            <span class="icon">
+                <i class="fa fa-envelope"></i>
+            </span>
+            <input id="login" type="text" ng-model="registerData.Email">
+            <label for="login" class="">Email</label>
+        </div>
+        <div class="input-field with-icon margin-bottom">
+            <span class="icon">
+                <i class="fa fa-user"></i>
+            </span>
+            <input id="login-psw" type="text" ng-model="registerData.FirstName">
+            <label for="login-psw">First Name</label>
+        </div>
+        <div class="input-field with-icon margin-bottom">
+            <span class="icon">
+                <i class="fa fa-user"></i>
+            </span>
+            <input id="login-psw" type="text" ng-model="registerData.LastName">
+            <label for="login-psw">Last Name</label>
+        </div>
 
-    <div class="input-field with-icon">
-        <span class="icon">
-            <i class="fa fa-envelope"></i>
-        </span>
-        <input id="login" type="text">
-        <label for="login" class="">Username</label>
-    </div>
+        <div class="input-field with-icon margin-bottom">
+            <span class="icon">
+                <i class="fa fa-lock"></i>
+            </span>
+            <input id="login-psw" type="password" ng-model="registerData.Password">
+            <label for="login-psw">Password</label>
+        </div>
 
-    <div class="input-field with-icon margin-bottom">
-        <span class="icon">
-            <i class="fa fa-lock"></i>
-        </span>
-        <input id="login-psw" type="password">
-        <label for="login-psw">Password</label>
-    </div>
+        <div class="input-field with-icon margin-bottom">
+            <span class="icon">
+                <i class="fa fa-check"></i>
+            </span>
+            <input id="login-psw2" type="password" ng-model="registerData.RePassword">
+            <label for="login-psw2" class="">Confirm</label>
+        </div>
 
-    <div class="input-field with-icon margin-bottom">
-        <span class="icon">
-            <i class="fa fa-check"></i>
-        </span>
-        <input id="login-psw2" type="password">
-        <label for="login-psw2" class="">Confirm</label>
-    </div>
-
-    <button class="btn-large block margin-bottom" type="button">Sign Up</button>
-    <span class="app-desc">Have an account? <a class="primary-text" href="#">Login</a></span>
-
+        <button class="btn-large block margin-bottom" type="submit">Sign Up</button>
+        <span class="app-desc">Have an account? <a class="primary-text" href="#">Login</a></span>
+    </form>
 </div>
 <!-- End form content -->

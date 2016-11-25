@@ -1,11 +1,11 @@
 ﻿angular.module('mcareAppLogin').controller('RegisterController', ['$scope', '$http', function ($scope, $http) {
-    $scope.registerData = { UserType: "-1"};
+    $scope.registerData = { UserType: "practitioner" };
     $scope.ErrorMessage = "";
 
     $scope.RegisterAction = function () {
         $("#ErrorMessage").slideUp('slow');
         if ($scope.registerData.UserType != "-1") {
-            if ($scope.registerData.Agree) {
+//            if ($scope.registerData.Agree) {
                 if ($scope.registerData.Password == $scope.registerData.RePassword) {
                     $http.put(appGlobalSettings.apiBaseUrl + '/User',
                     JSON.stringify($scope.registerData))
@@ -16,11 +16,11 @@
                             $http.post(appGlobalSettings.apiBaseUrl + '/User',
                                 JSON.stringify(login))
                                 .then(function (data) {
-                                    sessionStorage.setItem(appGlobalSettings.sessionTokenName, data.data.UserToken.Token);
-                                    sessionStorage.setItem(appGlobalSettings.sessionUserType, data.data.UserType);
+                                    localStorage.setItem(appGlobalSettings.sessionTokenName, data.data.UserToken.Token);
+                                    localStorage.setItem(appGlobalSettings.sessionUserType, data.data.UserType);
                                     switch (data.data.UserType){
                                         case 'practitioner':
-                                            document.location.href = "/#/profile";
+                                            document.location.href = "index.html";
                                             break;
                                         case 'patient':
                                             document.location.href = "/#/patientprofileform";
@@ -40,11 +40,11 @@
                     $scope.ErrorMessage = "Password not matching.";
                     $("#ErrorMessage").slideDown('slow');
                 }
-            }
-            else {
-                $scope.ErrorMessage = "Tick on agree.";
-                $("#ErrorMessage").slideDown('slow');
-            }
+            //}
+            //else {
+            //    $scope.ErrorMessage = "Tick on agree.";
+            //    $("#ErrorMessage").slideDown('slow');
+            //}
         }
         else {
             $scope.ErrorMessage = "Please select user type.";
