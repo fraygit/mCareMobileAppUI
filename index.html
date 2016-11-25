@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Maleo - Multipurpose Mobile Template</title>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="x-ua-compatible">
+	<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" href="images/favicon.png">
+    <link href="css/fullcalendar.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+<div id="main" ng-app="mcareApp">
+
+	<!-- LEFT SIDEBAR -->
+	<div id="slide-out-left" class="side-nav">
+
+		<div class="side-cover"><!-- Leftbar Cover -->
+			<div class="overlay"></div>
+			<div class="cover-img">
+				<img src="images/dummy.jpg" alt="">
+			</div>
+			<div class="prof-container">
+				<div class="avatar">
+					<img src="images/no-img.gif" alt="">
+				</div>
+				<div class="profile-name">
+					alfisahr
+				</div>
+			</div>
+		</div><!-- END Leftbar Cover -->
+		
+		<!-- App/Site Menu -->
+        <ul class="collapsible" data-collapsible="accordion" ng-controller="navigationController">
+            <li ui-sref-active="current-item">
+                <a ui-sref="home.index"><i class="fa fa-dashboard"></i> Home</a>
+            </li>
+            <li ui-sref-active="current-item">
+                <a ui-sref="patientlist"><i class="fa fa-user"></i> Clients</a>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="fa fa-sign-out"></i> Layout <span class="angle-right fa fa-angle-right"></span></div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="sequence.html">Sequence / Wizard</a></li>
+                        <li><a href="drawer.html">Drawer</a></li>
+                        <li><a href="sidebar-switch.html">Sidebar Switch</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="fa fa-file-o"></i> Pages <span class="angle-right fa fa-angle-right"></span></div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="page.html">Standard Page</a></li>
+                        <li><a href="testimonial.html">Testimonial</a></li>
+                        <li><a href="todo.html">To Do</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="coming-soon.html">Coming Soon</a></li>
+                        <li><a href="404.html">404</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="fa fa-tablet"></i> App <span class="angle-right fa fa-angle-right"></span></div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="calendar.html">Calendar</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Signup</a></li>
+                        <li><a href="forgot.html">Forgot Password</a></li>
+                        <li><a href="lockscreen.html">Lockscreen</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="fa fa-file-text-o"></i> Blog <span class="angle-right fa fa-angle-right"></span></div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="blog-list.html">Blog List</a></li>
+                        <li><a href="blog-small-list.html">Blog Small List</a></li>
+                        <li><a href="blog-archieve.html">Blog Archieve</a></li>
+                        <li><a href="article.html">Blog Inside</a></li>
+                        <li><a href="article-gallery.html">Blog Inside (Gallery)</a></li>
+                        <li><a href="article-video.html">Blog Inside (Video)</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="fa fa-calendar-o"></i> Event <span class="angle-right fa fa-angle-right"></span></div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="event-list.html">List</a></li>
+                        <li><a href="event.html">Inside Page</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="gallery-filter.html"><i class="fa fa-camera"></i> Gallery</a>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="fa fa-shopping-bag"></i> Shop <span class="angle-right fa fa-angle-right"></span></div>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="category.html">Category</a></li>
+                        <li><a href="product-list.html">Product List</a></li>
+                        <li><a href="product.html">Product Detail</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="line-separator"></div>
+            </li>
+            <li>
+                <a ng-click="Logout()"><i class="fa fa-edit"></i> Logout</a>
+            </li>
+        </ul>
+		<!-- End Site/App Menu -->
+
+	</div>
+	<!-- END LEFT SIDEBAR -->
+
+	<!-- RIGHT SIDEBAR -->
+	<div id="slide-out-right" class="side-nav">
+
+		<!-- TABS -->
+		<div class="sidebar-tabs">
+
+			<!-- Searchbar -->
+			<div class="searchbar">
+				<span class="icon">
+					<i class="fa fa-search"></i>
+				</span>
+				<input type="search" placeholder="Search">
+			</div>
+			<!-- End Searchbar -->
+			
+			<!-- Tabs Menu -->
+			<ul class="tabs">
+				<li class="tab col s3"><a class="active" href="#today">Today</a></li>
+				<li class="tab col s3"><a href="#chat">Chat</a></li>
+			</ul>
+			<!-- End Tabs Menu -->
+
+		</div>
+
+		<!-- Tabs Content -->
+		<div class="tabs-content">
+
+			<!-- Today Tabs -->
+			<div id="today" class="col s12">
+
+				<!-- Date Section -->
+				<div class="tabs-date">
+					Thursday, 29th Oct
+				</div>
+				<!-- End Date Section -->
+
+				<!-- Notifications Section -->
+				<div class="tabs-block">
+					<h3 class="block-heading">Notifications</h3>
+					<ol class="tabs-notifications">
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="app-content">
+								<div class="username">
+									Martin Keown
+								</div>
+								<p>Sent you a message</p>
+								<span class="time">1 hour ago</span>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="app-content">
+								<div class="username">
+									Melanie Ash
+								</div>
+								<p>Like your post.</p>
+								<span class="time">Today at 03:13</span>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="app-content">
+								<div class="username">
+									Kartika Putri
+								</div>
+								<p>Sent you a message</p>
+								<span class="time">Yesterday at 11:12</span>
+							</div>
+							<div class="clear"></div>
+						</li>
+					</ol>
+				</div>
+				<!-- End Notifications Section -->
+
+				<!-- Event Section -->
+				<div class="tabs-block">
+					<h3 class="block-heading">Event</h3>
+					<ol class="tabs-event">
+						<li>
+							<div class="event-date">
+								<span class="date">29</span>
+								<span class="month">Oct</span>
+							</div>
+							<div class="event-name">
+								Maleo template release
+							</div>
+						</li>
+						<li>
+							<div class="event-date">
+								<span class="date">30</span>
+								<span class="month">Oct</span>
+							</div>
+							<div class="event-name">
+								Training maleo
+							</div>
+						</li>
+						<li>
+							<div class="event-date">
+								<span class="date">01</span>
+								<span class="month">Nov</span>
+							</div>
+							<div class="event-name">
+								Roadshow maleo
+							</div>
+						</li>
+					</ol>
+				</div>
+				<!-- End Event Section -->
+
+				<!-- Latest tweet Section -->
+				<div class="tabs-block">
+					<h3 class="block-heading">Latest tweet</h3>
+					<ol class="tabs-latest_tweet">
+						<li>
+							<span><a href="#">@alfisahr</a></span>
+							The strict of the code are available yet to <a href="#">#maleo</a> in the past.
+						</li>
+						<li>
+							<span><a href="#">@alfisahr</a></span>
+							Off road to the glory what ever will be happen. Go out <a href="#">http://t.co/hkT6ppW</a>
+						</li>
+					</ol>
+				</div>
+				<!-- End Latest tweet Section -->
+
+			</div>
+			<!-- End Today Tabs -->
+
+			<!-- Chat Tabs -->
+			<div id="chat" class="col s12">
+
+				<div class="tabs-block">
+					<ol class="tabs-chat">
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Aaron Alphi
+								</div>
+							</div>
+							<span class="indicator"></span>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Amy Lee
+								</div>
+							</div>
+							<span class="indicator"></span>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Natasha Koher
+								</div>
+							</div>
+							<span class="indicator"></span>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Joe Allen
+								</div>
+							</div>
+							<span class="indicator"></span>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Pinky Winky
+								</div>
+							</div>
+							<span class="indicator"></span>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Jeff Chard
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Rob Bourdon
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+						<li>
+							<div class="user-pic">
+								<img src="images/no-img.gif" alt="">
+							</div>
+							<div class="user">
+								<div class="username">
+									Eric Williams
+								</div>
+							</div>
+							<div class="clear"></div>
+						</li>
+					</ol>
+				</div>
+
+			</div>
+			<!-- End Chat Tabs -->
+		</div>
+		<!-- END Tabs Content -->
+
+	</div>
+	<!-- END RIGHT SIDEBAR -->
+
+	<!-- MAIN PAGE -->
+	<div id="page">
+		
+		<!-- FIXED Top Navbar -->
+		<div class="top-navbar">
+			
+			<div class="top-navbar-left"><!-- Left Slide icon -->
+				<a href="#" id="menu-left" data-activates="slide-out-left">
+					<i class="fa fa-bars"></i>
+				</a>
+			</div><!-- END Left Slide icon -->
+
+			<div class="top-navbar-right"><!-- Right Slide icon -->
+				<!-- Dropdown on Navbar -->
+				<a href="#" class="dropdown-button" data-activates="dropdown1">
+					<i class="fa fa-ellipsis-v"></i>
+				</a>				
+				<ul id="dropdown1" class="dropdown-content">
+					<li><a href="#!"><i class="fa fa-user"></i> My Profile</a></li>
+					<li><a href="#!"><i class="fa fa-tablet"></i> Manage Apps</a></li>
+					<li><a href="#!"><i class="fa fa-usd"></i> Balance</a></li>
+					<li class="divider"></li>
+					<li><a href="#!"><i class="fa fa-cog"></i> Setting</a></li>
+				</ul>
+				<!-- End Dropdown on Navbar -->
+
+				<a href="#" id="menu-right" data-activates="slide-out-right">
+					<i class="fa fa-th-list"></i>
+				</a>
+			</div><!-- End Right Slide icon -->
+
+			<div class="site-title">
+				<h1>Maleo</h1>
+			</div>
+
+		</div>
+		<!-- End FIXED Top Navbar -->
+		
+
+		<!-- CONTENT CONTAINER -->
+		<div class="content-container">
+            <div ui-view="container"></div>
+
+		</div>
+		<!-- END CONTENT CONTAINER -->		
+
+
+		<!-- FOOTER -->
+		<div class="footer">
+				<h2 class="heading">Maleo</h2>
+				<p>Multipurpose mobile template</p>
+				<div class="social-footer">
+					<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+					<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+					<a href="#" class="gplus"><i class="fa fa-google-plus"></i></a>
+				</div>
+			<div class="copyright">
+				&copy; 2016 by alfisahr
+			</div>
+		</div>
+		<!-- End FOOTER -->
+
+		<!-- Back to top Link -->
+		<div id="to-top" class="main-bg"><i class="fa fa-chevron-up"></i></div>
+
+	</div>
+	<!-- END MAIN PAGE -->
+
+</div><!-- #main -->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+
+    <script src="js/app/common/helper.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/ui-bootstrap-tpls-2.2.0.min.js"></script>
+
+    <script src="js/app/common.js"></script>
+    <script src="js/app/config.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/services/sessionService.js"></script>
+    <script src="js/app/controllers/homeController.js"></script>
+    <script src="js/app/controllers/patientprofileController.js"></script>
+    <script src="js/app/controllers/profileController.js"></script>
+    <script src="js/app/controllers/patientprofileformController.js"></script>
+    <script src="js/app/controllers/patientlistController.js"></script>
+</body>
+</html>

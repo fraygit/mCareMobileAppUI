@@ -1,0 +1,27 @@
+﻿<h3 class="maleo-card_title big-title text-center">Login</h3><!-- Title app -->
+<!-- Form content -->
+<div class="form-content">
+
+    <span style="color:red;" ng-show="LoginError.ShowError">{{ LoginError.Message }}</span>
+    <p class="app-desc">Please fill the form below such username & password for your access to the app.</p>
+
+    <div class="input-field with-icon">
+        <span class="icon">
+            <i class="fa fa-envelope"></i>
+        </span>
+        <input id="login" type="text" ng-model="LoginForm.Email">
+        <label for="login">Email</label>
+    </div>
+
+    <div class="input-field with-icon margin-bottom">
+        <span class="icon">
+            <i class="fa fa-lock"></i>
+        </span>
+        <input id="login-psw" type="password" ng-model="LoginForm.Password">
+        <label for="login-psw">Password</label>
+    </div>
+
+    <button class="btn-large block margin-bottom" type="button" ng-click="ValidateUser()">Login</button>
+    <span class="app-desc">Don't have an account? <a class="primary-text" ui-sref="home.register">Sign Up</a></span>
+
+</div>

@@ -1,0 +1,26 @@
+﻿<div class="maleo-card margin-bottom animated fadeInUp" id="pnlAddAppointmentButton">
+    <a ng-click="AddAppointment()" class="load-more">Add new appointment</a>
+</div>
+
+<div class="maleo-card margin-bottom maleo-article animated fadeOutUp" style="display:none;" id="pnlAddAppointment">
+    <div class="post-header">
+        <!-- Contain title page -->
+        <h1 class="entry-title_page">Add appointment</h1>
+    </div>
+    <div class="blog-content">
+        <input type="text" placeholder="Title" />
+        <input type="text" placeholder="Date" />
+        <button class="btn" type="button" ng-click="Cancel()">Cancel</button>
+        &nbsp;
+        <button class="btn" type="button">Save</button>
+    </div>
+</div>
+
+<div class="clear"></div>
+<div class="maleo-card margin-bottom animated fadeInUp">
+    <br />
+    <div id="appointment" style="width:90%; margin: 0 auto;">
+
+    </div>
+    <br />
+</div>

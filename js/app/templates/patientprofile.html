@@ -1,0 +1,549 @@
+﻿<link href="/plugins/bower_components/horizontal-timeline/css/horizontal-timeline.css" rel="stylesheet" />
+
+<style type="text/css">
+    .tabs-style-shape {
+        max-width : none!important;
+    }
+
+    .timeline-badge{
+        left:85%!important;
+    }
+
+    .timeline-panel{
+        width:79%!important;
+    }
+</style>
+
+<div class="row bg-title">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Profile</h4>
+    </div>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+        <ol class="breadcrumb">
+            <li><a href="index.html">Dashboard</a></li>
+            <li class="active">Dashboard 2</li>
+        </ol>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<div class="row">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+            <div class="white-box">
+                <!--<div class="row">
+                    <div class="col-lg-2">
+                        <h3 class="box-title m-b-0">Default Tab</h3>
+                    </div>
+                </div>-->
+
+                <div class="row">
+                    <div class="col-lg-2">
+                        <a href="javascript:void(0)">
+                            <img src="/images/anna.jpg" class="thumb-lg img-circle" alt="img" />
+                        </a>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>NHI</strong> <br>
+                                <p class="text-muted">{{ PatientProfile.PatientProfile.NHI }}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Last Name</strong> <br>
+                                <p class="text-muted">{{ PatientProfile.User.LastName }}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>First Name</strong> <br>
+                                <p class="text-muted">{{ PatientProfile.User.FirstName }}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Date of birth</strong> <br>
+                                <p class="text-muted">{{ PatientProfile.PatientProfile.DateOfBirth | date: 'd MMM yyyy' }}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Gender</strong> <br>
+                                <p class="text-muted">{{ PatientProfile.PatientProfile.Gender }}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Ethnicity</strong> <br>
+                                <p class="text-muted">{{ PatientProfile.PatientProfile.Ethnicity }}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Marital Status</strong> <br>
+                                <p class="text-muted">{{ PatientProfile.PatientProfile.MaritalStatus }}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Pregnacy Status</strong> <br>
+                                <p class="text-muted">Active</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Pre Preg Weight</strong> <br>
+                                <p class="text-muted">90 kg</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Last Normal Period</strong> <br>
+                                <p class="text-muted">2 Feb 2016</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Blood Type</strong> <br>
+                                <p class="text-muted">0</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Allergies</strong> <br>
+                                <p class="text-muted">None</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Contact Number</strong> <br>
+                                <p class="text-muted">0221902113</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r">
+                                <strong>Address</strong> <br>
+                                <p class="text-muted">308 Hillsborough Road, Hillsborough</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="text-center">Estimated Due Date : 05 Dec 2016</h3>
+                        <h3 class="text-center">Current Week : 30</h3>
+                        <div class="progress progress-lg">
+                            <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 35%;" class="progress-bar progress-bar-success progress-bar-striped"></div>
+                            <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 35%;" class="progress-bar progress-bar-warning progress-bar-striped active"></div>
+                            <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 10%;" class="progress-bar progress-bar-danger progress-bar-striped active"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--<div class="row">
+                    <div class="col-lg-12">
+                        <div class="cd-horizontal-timeline loaded" style="margin:0;">
+                            <div class="timeline">
+                                <div class="events-wrapper">
+                                    <div class="events" style="width: 1800px;">
+                                        <ol>
+                                            <li><a href="#0" data-date="16/01/2014" class="selected" style="left: 120px;">16 Jan</a></li>
+                                            <li><a href="#0" data-date="28/02/2014" style="left: 300px;">28 Feb</a></li>
+                                            <li><a href="#0" data-date="20/04/2014" style="left: 480px;">20 Mar</a></li>
+                                            <li><a href="#0" data-date="20/05/2014" style="left: 600px;">20 May</a></li>
+                                            <li><a href="#0" data-date="09/07/2014" style="left: 780px;">09 Jul</a></li>
+                                            <li><a href="#0" data-date="30/08/2014" style="left: 960px;">30 Aug</a></li>
+                                            <li><a href="#0" data-date="15/09/2014" style="left: 1020px;">15 Sep</a></li>
+                                            <li><a href="#0" data-date="01/11/2014" style="left: 1200px;">01 Nov</a></li>
+                                            <li><a href="#0" data-date="10/12/2014" style="left: 1380px;">10 Dec</a></li>
+                                            <li><a href="#0" data-date="19/01/2015" style="left: 1500px;">29 Jan</a></li>
+                                            <li><a href="#0" data-date="03/03/2015" style="left: 1680px;">3 Mar</a></li>
+                                        </ol>
+
+                                        <span class="filling-line" aria-hidden="true" style="transform: scaleX(0.0776953);"></span>
+                                    </div>
+                                </div> 
+
+                                <ul class="cd-timeline-navigation">
+                                    <li><a href="#0" class="prev inactive">Prev</a></li>
+                                    <li><a href="#0" class="next">Next</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="row">
+                    <div class="col-lg-2">
+                        &nbsp;
+                    </div>
+                </div>
+
+                <!--<div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Progress
+                                <div class="pull-right"><a data-perform="panel-collapse"><i class="ti-minus"></i></a> <a data-perform="panel-dismiss"><i class="ti-close"></i></a> </div>
+                            </div>
+                            <div class="panel-wrapper collapse in" aria-expanded="true">
+                                <div class="panel-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sttabs tabs-style-shape">
+                            <nav>
+                                <ul>
+                                    <li class="tab-current tabItem">
+                                        <a id="section-shape-tab-0" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Overview</span>
+                                        </a>
+                                    </li>
+                                    <li class="tabItem">
+                                        <a id="section-shape-tab-1" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Prenatal Visits</span>
+                                        </a>
+                                    </li>
+                                    <li class="tabItem">
+                                        <a id="section-shape-tab-4" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Lab Tests</span>
+                                        </a>
+                                    </li>
+                                    <li class="tabItem">
+                                        <a id="section-shape-tab-5" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Birth Plan</span>
+                                        </a>
+                                    </li>
+                                    <li class="tabItem">
+                                        <a id="section-shape-tab-5" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Labor</span>
+                                        </a>
+                                    </li>
+                                    <li class="tabItem">
+                                        <a id="section-shape-tab-5" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Newborn Details</span>
+                                        </a>
+                                    </li>
+                                    <li class="tabItem">
+                                        <a id="section-shape-tab-5" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Postpartum Visits</span>
+                                        </a>
+                                    </li>
+                                    <li class="tabItem">
+                                        <a id="section-shape-tab-6" class="achor-tab-menu">
+                                            <svg viewBox="0 0 80 60" preserveAspectRatio="none"><path id="tabshape" d="M80,60C34,53.5,64.417,0,0,0v60H80z"></path></svg>
+                                            <span>Chat</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="content-wrap">
+                                <section id="section-shape-tab-0-content" class="content-current tab-content-item">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-wrapper collapse in">
+                                                        <div class="panel-body">
+                                                            <canvas id="chtWeight" width="400" height="225"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-wrapper collapse in">
+                                                        <div class="panel-body">
+                                                            <canvas id="chtBP" width="400" height="225"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-wrapper collapse in">
+                                                        <div class="panel-body">
+                                                            <canvas id="chtFH" width="400" height="225"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-wrapper collapse in">
+                                                        <div class="panel-body">
+                                                            <h3>Reminders</h3>
+                                                            <hr />
+                                                            <div class="row">
+                                                                <div class="col-lg-4">
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox" checked="">
+                                                                        <label for="checkbox2"> Introduction </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> Enrolment </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> First Trimester Scan </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> Prenatal Lab Test </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> Other </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> Other </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> Second Trimester Scan  </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> Other </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-4">
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> 36 Week Birth Plan  </label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-primary">
+                                                                        <input id="checkbox2" type="checkbox">
+                                                                        <label for="checkbox2"> Bags Packed </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="panel panel-default">
+                                                <div class="panel-wrapper collapse in">
+                                                    <div class="panel-body">
+                                                        <div class="col-lg-2"><p><small class="text-muted"><i class="fa fa-clock-o"></i> 3 Aug 2016</small> </p></div>
+                                                        <div class="col-lg-10"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p></div>
+                                                        <div class="col-lg-2"><p><small class="text-muted"><i class="fa fa-clock-o"></i> 3 Jul 2016</small> </p></div>
+                                                        <div class="col-lg-10"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                <section id="section-shape-tab-1-content" class="tab-content-item">
+                                    <div class="vtabs customvtab" style="width:100%">
+                                        <ul class="nav tabs-vertical">
+                                            <li class="tab active"><a data-toggle="tab" href="#vhome3" aria-expanded="true" target="_self"> <span class="visible-xs"><i class="ti-home"></i></span> <span class="hidden-xs">Record a visit</span> </a> </li>
+                                            <li class="tab"><a data-toggle="tab" href="#vprofile3" aria-expanded="false" target="_self"> <span class="visible-xs"><i class="ti-user"></i></span> <span class="hidden-xs">Previous visits</span> </a> </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="vhome3" class="tab-pane active">
+                                                <div class="col-md-12 col-lg-12">
+                                                    <form action="#">
+                                                        <div class="form-body">
+                                                            <h3 class="box-title">Measurements</h3>
+                                                            <hr>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Date</label>
+                                                                        <input type="text" id="txtDate" class="form-control" placeholder="NHI" ng-model="Profile.PatientProfile.NHI">
+                                                                        <!--<span class="help-block"> This is inline help </span>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Week</label>
+                                                                        <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                            <option value="" selected disabled>- select -</option>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                            <option value="11">11</option>
+                                                                            <option value="12">12</option>
+                                                                            <option value="13">13</option>
+                                                                            <option value="14">14</option>
+                                                                            <option value="15">15</option>
+                                                                            <option value="16">16</option>
+                                                                            <option value="17">17</option>
+                                                                            <option value="18">18</option>
+                                                                            <option value="19">19</option>
+                                                                            <option value="20">20</option>
+                                                                            <option value="21">21</option>
+                                                                            <option value="22">22</option>
+                                                                            <option value="23">23</option>
+                                                                            <option value="24">24</option>
+                                                                            <option value="25">25</option>
+                                                                            <option value="26">26</option>
+                                                                            <option value="27">27</option>
+                                                                            <option value="28">28</option>
+                                                                            <option value="29">29</option>
+                                                                            <option value="30">30</option>
+                                                                            <option value="31">31</option>
+                                                                            <option value="32">32</option>
+                                                                            <option value="33">33</option>
+                                                                            <option value="34">34</option>
+                                                                            <option value="35">35</option>
+                                                                            <option value="36">36</option>
+                                                                            <option value="37">37</option>
+                                                                            <option value="38">38</option>
+                                                                            <option value="39">39</option>
+                                                                            <option value="40">40</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Weight</label>
+                                                                        <input type="text" class="form-control" placeholder="kg" ng-model="Profile.User.FirstName">
+                                                                        <!--<span class="help-block"> This is inline help </span>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="control-label">
+                                                                        <label class="control-label">Protien/Glucose</label>
+                                                                        <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                            <option value="" selected disabled>Protien</option>
+                                                                            <option value="Normal">Normal</option>
+                                                                            <option value="High">High</option>
+                                                                            <option value="Low">Low</option>
+                                                                        </select>
+                                                                        <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                            <option value="" selected disabled>Glucose</option>
+                                                                            <option value="Normal">Normal</option>
+                                                                            <option value="High">High</option>
+                                                                            <option value="Low">Low</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <!--/span-->
+                                                                <div class="col-md-2">
+                                                                    <div class="control-label">
+                                                                        <label class="control-label">Blood Pressure</label>
+                                                                        <input type="text" id="lastName" class="form-control" placeholder="" ng-model="Profile.User.LastName">
+                                                                        <input type="text" id="lastName" class="form-control" placeholder="" ng-model="Profile.User.LastName">
+                                                                        <!--<span class="help-block"> This field has error. </span>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="control-label">
+                                                                        <label class="control-label">Pulse</label>
+                                                                        <input type="text" id="lastName" class="form-control" placeholder="" ng-model="Profile.User.LastName">
+                                                                        <!--<span class="help-block"> This field has error. </span>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="control-label">
+                                                                        <label class="control-label">Fundal Height</label>
+                                                                        <input type="text" id="lastName" class="form-control" placeholder="" ng-model="Profile.User.LastName">
+                                                                        <!--<span class="help-block"> This field has error. </span>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2">
+                                                                    <div class="control-label">
+                                                                        <label class="control-label">FHT</label>
+                                                                        <input type="text" id="lastName" class="form-control" placeholder="" ng-model="Profile.User.LastName">
+                                                                        <!--<span class="help-block"> This field has error. </span>-->
+                                                                    </div>
+                                                                </div>
+                                                                <!--/span-->
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <div class="control-label">
+                                                                        <label class="control-label">Fetal Position</label>
+                                                                        <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                                                            <option value="" selected disabled>- select -</option>
+                                                                            <option value="LOA">LOA</option>
+                                                                            <option value="LOT">LOT</option>
+                                                                            <option value="LOP">LOP</option>
+                                                                            <option value="LOP">ROA</option>
+                                                                            <option value="ROT">ROT</option>
+                                                                            <option value="ROP">ROP</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="control-label">
+                                                                        <label class="control-label">Edema</label>
+                                                                        <input type="text" id="lastName" class="form-control" placeholder="" ng-model="Profile.User.LastName">
+                                                                        <!--<span class="help-block"> This field has error. </span>-->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label class="control-label">Notes</label>
+                                                                    <textarea rows="5" class="form-control"></textarea>
+                                                                    <!--<span class="help-block"> This field has error. </span>-->
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                &nbsp;
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-2">
+                                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                        <div class="clearfix"></div>
+                                                </div>
+                                            <div id="vprofile3" class="tab-pane">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>Date</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td><a href="">20 Mar 2016</a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td><a href="">07 Feb 2016</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+                                <section id="section-shape-tab-2-content" class="tab-content-item"><h2>Tabbing 3</h2></section>
+                                <section id="section-shape-tab-3-content" class="tab-content-item"><h2>Tabbing 4</h2></section>
+                                <section id="section-shape-tab-4-content" class="tab-content-item"><h2>Tabbing 5</h2></section>
+                                <section id="section-shape-tab-5-content" class="tab-content-item"><h2>Tabbing 5</h2></section>
+                            </div><!-- /content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

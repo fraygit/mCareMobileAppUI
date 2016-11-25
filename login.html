@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Maleo - Multipurpose Mobile Template</title>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="x-ua-compatible">
+	<meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" href="images/favicon.png">
+    <link href="css/keyframe.css" rel="stylesheet" />
+    <style type="text/css">
+        .ng-enter {
+            animation: fadeInRight 0.5s linear;
+            -webkit-animation: fadeInRight 0.5s linear;
+            opacity:0;
+        }
+
+        .ng-enter.ng-enter-active {
+          opacity:1;
+        }
+
+        .fade.ng-leave {
+          animation: fadeOutLeft 0.5s linear;
+          -webkit-animation: fadeOutLeft 0.5s linear;
+        }
+    </style>
+</head>
+
+<body ng-app="mcareAppLogin">
+
+<div id="main">
+	<!-- MAIN PAGE -->
+	<div id="page">
+		
+		<!-- CONTENT CONTAINER -->
+		<div class="content-container">
+
+			<!-- Card with .signup class -->
+			<div class="maleo-card signup animated fadeInUp">
+
+                <div ui-view="container"></div>
+				<!-- End form content -->
+
+			</div>
+			<!-- End Card -->
+
+		</div>
+		<!-- END CONTENT CONTAINER -->
+
+
+	</div>
+	<!-- END MAIN PAGE -->
+
+</div><!-- #main -->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+
+    <script src="js/app/common/helper.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+
+    <script src="js/app/services/sessionService.js"></script>
+    <script src="js/app/common.js"></script>
+    <script src="js/app/config.js"></script>
+    <script src="js/app/appLogin.js"></script>
+    <script src="js/app/controllers/loginController.js"></script>
+    <script src="js/app/controllers/registerController.js"></script>
+
+
+</body>
+</html>

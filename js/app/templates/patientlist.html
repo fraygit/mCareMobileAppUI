@@ -1,0 +1,60 @@
+﻿
+<h1 class="page-title margin-bottom animated fadeIn">Clients</h1>
+
+<div class="maleo-card margin-bottom animated fadeInUp" id="pnlAddClientButton">
+    <a ng-click="AddClient()" class="load-more">Add new client</a>
+</div>
+
+<div class="maleo-card margin-bottom maleo-article animated fadeOutUp" style="display:none;" id="pnlAddClient">
+    <div class="post-header">
+        <!-- Contain title page -->
+        <h1 class="entry-title_page">Add client</h1>
+    </div>
+    <div class="blog-content">
+        <input type="text" placeholder="NHI" />
+        <input type="text" placeholder="Email" />
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+        <button class="btn" type="button" ng-click="Cancel()">Cancel</button>
+        &nbsp;
+        <button class="btn" type="button">Save</button>
+    </div>
+</div>
+
+<div class="maleo-card maleo-blog_small margin-bottom_low animated fadeInUp" ng-repeat="profile in PatientList">
+    <!-- Blog post No. 1 -->
+    <div class="maleo-blog_thumb">
+        <img src="images/avatar_blank.jpg_1.png" />
+    </div>
+    <div class="maleo-blog_rightcontent">
+        <h3 class="blog-title"><a href="#">{{ profile.User.FirstName }} {{ profile.User.LastName }}</a></h3>
+        <div class="blog-meta">
+            <span class="date">Oct 30, 2016</span>
+            <span class="separator">-</span>
+            <span class="author">Natalie Amyllia</span>
+        </div><!-- .blog-meta -->
+    </div><!-- .maleo-blog_rightcontent -->
+</div>
+
+
+<!--<div class="row el-element-overlay m-b-40">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="profile in PatientList">
+        <div class="white-box">
+            <div class="el-card-item">
+                <div class="el-card-avatar el-overlay-1">
+                    <img src="{{ profile.User.FirstName == 'Fay' ? '/images/anna.jpg' : '/images/2.jpg'}}" />
+                    <div class="el-overlay">
+                        <ul class="el-info">
+                            <li><a class="btn default btn-outline image-popup-vertical-fit" ng-click="GoToPatientProfile(profile.User.Email)"><i class="icon-magnifier"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="el-card-content">
+                    <h3 class="box-title">{{ profile.User.FirstName }} {{ profile.User.LastName }}</h3>
+<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>-->
