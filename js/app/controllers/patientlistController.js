@@ -12,14 +12,18 @@
 
     $scope.PatientList = [];
 
-    $http.get(appGlobalSettings.apiBaseUrl + '/PatientList?token=' + encodeURIComponent(token))
-            .then(function (data) {
-                $scope.PatientList = data.data;
-            },
-            function (error) {
-                $scope.ErrorMessage = "Error encountered. " + error.statusText;
-                $("#ErrorMessage").slideDown('slow');
-            });
+    var LoadList = function () {
+        $http.get(appGlobalSettings.apiBaseUrl + '/PatientList?token=' + encodeURIComponent(token))
+                .then(function (data) {
+                    $scope.PatientList = data.data;
+                },
+                function (error) {
+                    $scope.ErrorMessage = "Error encountered. " + error.statusText;
+                    $("#ErrorMessage").slideDown('slow');
+                });
+    };
+
+    LoadList();
 
     $scope.AddClient = function () {
         $("#pnlAddClient").show();
@@ -37,7 +41,29 @@
         $("#pnlAddClient").hide();
         $("#pnlAddClient").addClass("fadeOutUp");
         $("#pnlAddClient").removeClass("fadeInUp");
-
     };
+
+    $scope.RegisterForm = { ShowError: false };
+
+    $scope.SaveNewPatient = function () {
+        $scope.RegisterForm.ShowError = false;
+        if (!isBlank($scope.Register.Email)) {
+
+            $http.put(appGlobalSettings.apiBaseUrl + '/PatientList?token=' + encodeURIComponent(token),
+                    JSON.stringify($scope.Register))
+                    .then(function (data) {
+                        $scope.Cancel();
+                        LoadList();
+                    },
+                    function (error) {
+                        $scope.RegisterForm.ErrorMessage = "Error encountered. " + error.statusText;
+                        $scope.RegisterForm.ShowError = true;
+                    });
+        }
+        else {
+            $scope.RegisterForm.ErrorMessage = "Please input email address.";
+            $scope.RegisterForm.ShowError = true;
+        }
+    }
 
 }]);

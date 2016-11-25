@@ -10,14 +10,15 @@
         <!-- Contain title page -->
         <h1 class="entry-title_page">Add client</h1>
     </div>
+    <span style="color:red;" ng-show="RegisterForm.ShowError"></span>
     <div class="blog-content">
-        <input type="text" placeholder="NHI" />
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Last Name" />
+        <input type="text" placeholder="NHI" ng-model="Register.NHI" />
+        <input type="text" placeholder="Email" ng-model="Register.Email" />
+        <input type="text" placeholder="First Name" ng-model="Register.FirstName" />
+        <input type="text" placeholder="Last Name" ng-model="Register.LastName" />
         <button class="btn" type="button" ng-click="Cancel()">Cancel</button>
         &nbsp;
-        <button class="btn" type="button">Save</button>
+        <button class="btn" type="button" ng-click="SaveNewPatient()">Save</button>
     </div>
 </div>
 
