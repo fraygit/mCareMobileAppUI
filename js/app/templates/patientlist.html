@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="maleo-card maleo-blog_small margin-bottom_low animated fadeInUp" ng-repeat="profile in PatientList">
+<div class="maleo-card maleo-blog_small margin-bottom_low animated fadeInUp" ng-repeat="profile in PatientList" ng-click="GoToPatientProfile(profile.User.Email)">
     <!-- Blog post No. 1 -->
     <div class="maleo-blog_thumb">
         <img src="images/avatar_blank.jpg_1.png" />
