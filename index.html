@@ -18,7 +18,7 @@
 <div id="main" ng-app="mcareApp">
 
 	<!-- LEFT SIDEBAR -->
-	<div id="slide-out-left" class="side-nav">
+	<div id="slide-out-left" class="side-nav" ng-controller="navigationController">
 
 		<div class="side-cover"><!-- Leftbar Cover -->
 			<div class="overlay"></div>
@@ -30,13 +30,13 @@
 					<img src="images/no-img.gif" alt="">
 				</div>
 				<div class="profile-name">
-					alfisahr
+					{{ FirstName }}
 				</div>
 			</div>
 		</div><!-- END Leftbar Cover -->
 		
 		<!-- App/Site Menu -->
-        <ul class="collapsible" data-collapsible="accordion" ng-controller="navigationController">
+        <ul class="collapsible" data-collapsible="accordion">
             <li ui-sref-active="current-item">
                 <a ui-sref="home.index"><i class="fa fa-dashboard"></i> Home</a>
             </li>

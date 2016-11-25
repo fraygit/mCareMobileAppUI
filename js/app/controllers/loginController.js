@@ -9,6 +9,7 @@
             $http.post(appGlobalSettings.apiBaseUrl + '/User',
                 JSON.stringify($scope.LoginForm))
                 .then(function (data) {
+                    localStorage.setItem("firstname", data.data.UserDetails.FirstName);
                     localStorage.setItem(appGlobalSettings.sessionTokenName, data.data.UserToken.Token);
                     localStorage.setItem(appGlobalSettings.sessionUserType, data.data.UserType);
                     document.location.href = "index.html";

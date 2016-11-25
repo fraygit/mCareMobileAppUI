@@ -16,6 +16,7 @@
                             $http.post(appGlobalSettings.apiBaseUrl + '/User',
                                 JSON.stringify(login))
                                 .then(function (data) {
+                                    localStorage.setItem("firstname", data.data.UserDetails.FirstName);
                                     localStorage.setItem(appGlobalSettings.sessionTokenName, data.data.UserToken.Token);
                                     localStorage.setItem(appGlobalSettings.sessionUserType, data.data.UserType);
                                     switch (data.data.UserType){

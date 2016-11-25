@@ -76,6 +76,11 @@ angular.module('mcareApp').controller('navigationController', ['$scope', '$http'
     $scope.ShowMyPregnancy = false;
     $scope.Showdashboard = false;
 
+    var name = localStorage.getItem("firstname");
+    if (name != null) {
+        $scope.FirstName = name;
+    }
+
     switch (sessionStorage.getItem("UserType")) {
         case "patient":
             $scope.ShowMyProfile = true;
